@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Student Finance Tracker</title>
+<title>Student Finances Tracker</title>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles/main.css">
 <script type="module" src="scripts/main.js"></script>
@@ -32,7 +32,7 @@
     <h2 id="h-dashboard" tabindex="-1">Dashboard</h2>
     <dl class="stats">
       <div class="card"><dt>Total records</dt><dd id="stat-count">0</dd></div>
-      <div class="card"><dt>Total spent</dt><dd id="stat-sum">0.00</dd></div>
+      <div class="card"><dt>Total amount spent</dt><dd id="stat-sum">0.00</dd></div>
       <div class="card"><dt>Top category</dt><dd id="stat-top">—</dd></div>
     </dl>
     <div class="card" id="cap-card">
@@ -41,7 +41,7 @@
       <p id="cap-assertive" role="alert" aria-live="assertive"></p>
     </div>
     <div class="card">
-      <h3>Last 7 days</h3>
+      <h3>Last week</h3>
       <p id="trend-total"></p>
       <ol id="trend" class="trend" aria-label="Spending per day, oldest first"></ol>
     </div>
@@ -51,7 +51,7 @@
     <h2 id="h-records" tabindex="-1">Records</h2>
     <div class="toolbar">
       <div class="field grow">
-        <label for="search">Regex search</label>
+        <label for="search">Search </label>
         <input id="search" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. (coffee|tea)" aria-describedby="search-error">
         <p id="search-error" class="error"></p>
       </div>
@@ -75,14 +75,11 @@
         <select id="display-currency"></select>
       </div>
     </div>
-    <details class="hint">
-      <summary>Example patterns</summary>
-      <p><code>\.\d{2}\b</code> cents present · <code>(coffee|tea)</code> beverages · <code>\b(\w+)\s+\1\b</code> duplicate words · <code>^[A-Z]</code> starts with capital · <code>\d+(?= USD)</code> lookahead</p>
-    </details>
+    
     <p id="result-count" aria-live="polite"></p>
     <table>
-      <caption class="sr-only">Transactions</caption>
-      <thead><tr><th scope="col">Date</th><th scope="col">Description</th><th scope="col">Category</th><th scope="col">Amount</th><th scope="col">Actions</th></tr></thead>
+      <caption class="sr-only">Transactions made</caption>
+      <thead><tr><th scope="col">Date</th><th scope="col">Description of transaction</th><th scope="col">Category</th><th scope="col">Amount</th><th scope="col">Actions</th></tr></thead>
       <tbody id="tbody"></tbody>
     </table>
     <p id="empty" hidden>No records match.</p>
@@ -92,7 +89,7 @@
     <h2 id="h-add" tabindex="-1">Add transaction</h2>
     <form id="record-form" novalidate>
       <div class="field">
-        <label for="f-description">Description</label>
+        <label for="f-description">Description of Transaction</label>
         <input id="f-description" name="description" autocomplete="off" aria-describedby="err-description">
         <p id="err-description" class="error" aria-live="polite"></p>
       </div>
@@ -112,7 +109,7 @@
         <input id="f-date" name="date" inputmode="numeric" autocomplete="off" placeholder="2025-09-29" aria-describedby="err-date">
         <p id="err-date" class="error" aria-live="polite"></p>
       </div>
-      <button type="submit">Add record</button>
+      <button type="submit">Add a record</button>
     </form>
   </section>
 
@@ -120,7 +117,7 @@
     <h2 id="h-settings" tabindex="-1">Settings</h2>
     <form id="settings-form" novalidate>
       <fieldset>
-        <legend>Currencies (manual rates)</legend>
+        <legend>Currency (manual rates)</legend>
         <div class="field"><label for="s-base">Base currency</label><input id="s-base" name="base" maxlength="3"></div>
         <div class="row">
           <div class="field"><label for="s-c1code">Currency 2</label><input id="s-c1code" name="c1code" maxlength="3"></div>
