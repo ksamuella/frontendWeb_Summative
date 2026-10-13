@@ -1,3 +1,4 @@
+import './form.js';
 import { $, $$ } from './dom.js';
 
 /* ---------- routing (hash based) ---------- */

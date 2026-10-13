@@ -1,0 +1,22 @@
+import { t } from './t.js';
+import { RX, validateFields, realDate, collapse } from '../scripts/validators.js';
+
+t('description rejects leading space', !RX.desc.test(' lunch'));
+t('description rejects trailing space', !RX.desc.test('lunch '));
+t('description accepts normal text', RX.desc.test('Lunch at cafeteria'));
+t('collapse doubles', collapse('a   b  c') === 'a b c');
+t('amount accepts 12.50', RX.amount.test('12.50'));
+t('amount accepts 0', RX.amount.test('0'));
+t('amount rejects 012', !RX.amount.test('012'));
+t('amount rejects 1.234', !RX.amount.test('1.234'));
+t('amount rejects -5', !RX.amount.test('-5'));
+t('date accepts 2024-02-29', RX.date.test('2024-02-29') && realDate('2024-02-29'));
+t('date regex passes 2025-02-31 but realDate rejects', RX.date.test('2025-02-31') && !realDate('2025-02-31'));
+t('date rejects 2025-13-01', !RX.date.test('2025-13-01'));
+t('category accepts "Part-time work"', RX.category.test('Part-time work'));
+t('category rejects digits', !RX.category.test('Food2'));
+t('category rejects double space', !RX.category.test('Food  Court'));
+t('back-reference finds duplicate word', RX.dupWord.test('Coffee coffee refill'));
+t('back-reference ignores unique words', !RX.dupWord.test('Coffee with friends'));
+t('validateFields collects errors', Object.keys(validateFields({ description: ' ', amount: 'x', category: '1', date: 'no' }).errors).length === 4);
+t('validateFields cleans input', validateFields({ description: 'a  b', amount: '5', category: 'Food', date: '2025-01-01' }).clean.description === 'a b');
