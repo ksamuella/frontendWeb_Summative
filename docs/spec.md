@@ -33,7 +33,7 @@ Nav links [theme]  |
 - role=status / aria-live for errors, results, cap (polite under, assertive over)
 - aria-invalid on bad fields; keyboard-only flow for every action
 - Contrast >= 4.5:1 in light and dark themes; prefers-reduced-motion respected
-- Breakpoints: 360px (base), 768px, 1024px
+- Breakpoints: 360px (base), 768px, 1024px.
 
 ## Regex rules
 description ^\S(?:.\S)?$ | amount ^(0|[1-9]\d)(\.\d{1,2})?$
