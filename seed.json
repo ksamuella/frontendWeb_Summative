@@ -1,0 +1,14 @@
+[
+{"id":"rec_0001","description":"Lunch at cafeteria","amount":12.5,"category":"Food","date":"2026-10-14","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0002","description":"Chemistry textbook","amount":89.99,"category":"Books","date":"2026-10-13","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0003","description":"Bus pass","amount":45,"category":"Transport","date":"2026-10-12","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0004","description":"Coffee with friends","amount":8.75,"category":"Entertainment","date":"2026-10-11","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0005","description":"Coffee coffee refill","amount":3.2,"category":"Food","date":"2026-10-10","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0006","description":"Late library fee","amount":0.01,"category":"Fees","date":"2024-02-29","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0007","description":"Tuition deposit","amount":25000,"category":"Fees","date":"2025-12-31","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0008","description":"Tea & <b>snacks</b> for study group","amount":4.5,"category":"Food","date":"2026-10-08","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0009","description":"Free event pass","amount":0,"category":"Entertainment","date":"2026-10-13","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0010","description":"Notebook set (3 pack) - café edition","amount":7.25,"category":"Books","date":"2000-01-01","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0011","description":"Mobile data bundle","amount":15,"category":"Other","date":"2026-10-09","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"},
+{"id":"rec_0012","description":"Ride-share to the airport and back again after the long weekend trip home","amount":23.4,"category":"Transport","date":"2026-10-08","createdAt":"2025-09-30T08:00:00.000Z","updatedAt":"2025-09-30T08:00:00.000Z"}
+]

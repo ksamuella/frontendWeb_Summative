@@ -35,3 +35,25 @@ export function validateFields(v) {
     clean: { description: collapse(description), amount: Number(amount), category, date }
   };
 }
+
+export function validateImport(text) {
+  let data;
+  try { data = JSON.parse(text); } catch { return { ok: false, errors: ['File is not valid JSON.'] }; }
+  if (!Array.isArray(data)) return { ok: false, errors: ['Top level must be an array of records.'] };
+  const errors = [], ids = new Set(), records = [];
+  data.forEach((r, i) => {
+    const p = `Record ${i + 1}: `;
+    if (!r || typeof r !== 'object' || Array.isArray(r)) { errors.push(p + 'not an object.'); return; }
+    if (typeof r.id !== 'string' || !r.id) errors.push(p + 'missing id.');
+    else if (ids.has(r.id)) errors.push(p + 'duplicate id.');
+    else ids.add(r.id);
+    if (typeof r.amount !== 'number') errors.push(p + 'amount must be a number.');
+    const { errors: e, clean } = validateFields({ ...r, amount: String(r.amount) });
+    Object.values(e).forEach(m => errors.push(p + m));
+    ['createdAt', 'updatedAt'].forEach(k => {
+      if (typeof r[k] !== 'string' || Number.isNaN(Date.parse(r[k]))) errors.push(p + `${k} must be an ISO timestamp.`);
+    });
+    records.push({ id: r.id, ...clean, createdAt: r.createdAt, updatedAt: r.updatedAt });
+  });
+  return errors.length ? { ok: false, errors: errors.slice(0, 6) } : { ok: true, records };
+}

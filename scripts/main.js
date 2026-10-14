@@ -1,3 +1,4 @@
+import './settings.js';
 import './dashboard.js';
 import './records.js';
 import './form.js';

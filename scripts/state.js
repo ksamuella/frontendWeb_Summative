@@ -1,3 +1,5 @@
+import * as store from './storage.js';
+
 export const DEFAULT_SETTINGS = {
   base: 'USD',
   currencies: [{ code: 'EUR', rate: 0.92 }, { code: 'RWF', rate: 1450 }],
@@ -6,12 +8,16 @@ export const DEFAULT_SETTINGS = {
   categories: ['Food', 'Books', 'Transport', 'Entertainment', 'Fees', 'Other']
 };
 
-let records = [];
-let settings = { ...DEFAULT_SETTINGS };
+let records = store.loadRecords() ?? [];
+let settings = { ...DEFAULT_SETTINGS, ...(store.loadSettings() ?? {}) };
 const listeners = new Set();
 
 export const notify = () => listeners.forEach(f => f());
-const emit = () => notify();
+const emit = () => {
+  store.saveRecords(records);
+  store.saveSettings(settings);
+  notify();
+};
 const nextId = () => 'rec_' + String(
   records.reduce((m, r) => Math.max(m, parseInt(String(r.id).replace(/\D/g, ''), 10) || 0), 0) + 1
 ).padStart(4, '0');
