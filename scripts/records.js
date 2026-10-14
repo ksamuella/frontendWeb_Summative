@@ -15,13 +15,13 @@ function render() {
 }
 S.subscribe(render);
 
-/* search / sort / display currency */
+
 $('#search').addEventListener('input', e => { view.query = e.target.value; view.flashId = null; render(); });
 $('#ci').addEventListener('change', e => { view.ci = e.target.checked; render(); });
 $('#sort').addEventListener('change', e => { view.sort = e.target.value; render(); });
 $('#display-currency').addEventListener('change', e => S.updateSettings({ display: e.target.value }));
 
-/* inline edit / delete */
+
 $('#tbody').addEventListener('click', e => {
   const btn = e.target.closest('button[data-act]');
   if (!btn) return;
