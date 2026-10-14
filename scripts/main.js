@@ -1,3 +1,4 @@
+import './records.js';
 import './form.js';
 import { $, $$ } from './dom.js';
 
