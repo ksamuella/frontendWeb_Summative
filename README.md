@@ -1,7 +1,7 @@
 # student Finance Tracker 
 
 theme: student finance tracker (vanilla HTML/CSS/JS , no frameworks)
-Live site (Github Pages): https://ksamuella.github.io/frontendWeb-Summative/
+Live site (Github Pages): https://github.com/ksamuella/frontendWeb_Summative
 Demo Video (unlisted): https://youtu.be/UjSvLF-CFHI?feature=shared
 
 ## Features
