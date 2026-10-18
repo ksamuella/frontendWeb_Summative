@@ -4,7 +4,7 @@ export const view = {sort: 'date-desc', query: "", ci : true, editingId: null, f
 
 
 const pad = n => String(n).padStart(2, '0');
-export const isoDate = d =>`$ {d.getFullYear()}-${pad(d.getMonth()+1)} -${pad(d.getDate())}`;
+export const isoDate = d =>`${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
 
 export function announce(msg){
   const el =$('#status');
