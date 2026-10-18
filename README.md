@@ -2,7 +2,7 @@
 
 theme: student finance tracker (vanilla HTML/CSS/JS , no frameworks)
 Live site (Github Pages): https://ksamuella.github.io/frontendWeb-Summative/
-Demo Video (unlisted): 
+Demo Video (unlisted): https://youtu.be/UjSvLF-CFHI?feature=shared
 
 ## Features
 - Sections: About, Dashboard, Records (table on desktop, cards on mobile), Add form, Settings
